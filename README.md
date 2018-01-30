@@ -1,6 +1,6 @@
 # Joint Voxel and Coordinate Regression for Accurate 3D Facial Landmark Localization
 
-This repository includes the PyTorch code for evaluation and visualization of the network described in [Joint Voxel and Coordinate Regression for Accurate 3D Facial Landmark Localization].
+This repository includes the PyTorch code for evaluation and visualization of the network described in [Joint Voxel and Coordinate Regression for Accurate 3D Facial Landmark Localization](https://arxiv.org/abs/1801.09242).
 
 <p align='center'>
 <img src='imgs/aflwDemo.gif' title='examples for 3D facial landmark localization' style='max-width:600px'></img>
