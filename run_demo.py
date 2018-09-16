@@ -161,7 +161,7 @@ if __name__ == '__main__':
                         help='path to the model of coordinate regression subnetwork')
     parser.add_argument('--resume_p2v2c', default='checkpoint/model_p2v2c_300wLP.pth.tar', type=str,
                         help='path to the pre-trained model')
-    parser.add_argument('--gpus', default='0', type=str, help='set gpu IDs')
+    parser.add_argument('--gpus', default='5', type=str, help='set gpu IDs')
     parser.add_argument('--imgDir', default='./imgs/', type=str, help='path to test images')
     parser.add_argument('--lmDir', default='./imgs/', type=str, help='path to ground-truth .pts files')
     parser.add_argument('--outDir', default='./output/', type=str, help='path for saving prediction results')

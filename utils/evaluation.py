@@ -104,6 +104,10 @@ def bboxNormMeanError(pred, target):
     num_samples = pred_np.shape[0]
     num_pts = pred_np.shape[1]
 
+    z_mean_gap = [np.mean(target_np[i, :, 2]) - np.mean(pred_np[i, :, 2]) for i in range(num_samples)]
+    for i in range(num_samples):
+        pred_np[i, :, 2] += z_mean_gap[i]
+
     NME = [np.sum(np.linalg.norm(pred_np[i]-target_np[i], axis=1))/(num_pts*bbox_size[i]) for i in range(num_samples)]
     return NME
 

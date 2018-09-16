@@ -1,3 +1,4 @@
+import numpy as np
 import torch
 import torch.nn as nn
 from hourglass import Bottleneck
@@ -26,7 +27,7 @@ class pvcNet(nn.Module):
         self.is_cuda = is_cuda
 
         self.epoch = 0
-        self.best_acc = 0
+        self.best_acc = float('-inf')
         self.current_acc = -0
 
         if len(set(self.depth_res)) == 1:
@@ -53,18 +54,19 @@ class pvcNet(nn.Module):
     def forward(self, x):
         vox_list = self.pix2vox(x)
         voxel = vox_list[-1].unsqueeze(1)
-        output_ae = self.vox2coord(voxel)
-        return vox_list, voxel, output_ae
+        output_v2c = self.vox2coord(voxel)
+        coord = output_v2c[-1].view(x.size(0), -1, 3)
+        return vox_list, voxel, coord
 
 
     def landmarkDetection(self, image, target=None):
 
         input_var = torch.autograd.Variable(image, volatile=True)
-        output_fl, input_ae_fl, output_ae_fl = self.forward(input_var)
+        vox_list, voxel, coord = self.forward(input_var)
 
-        pred_cord_fl = 255*output_ae_fl[-1].view(-1, 3)
+        pred_coord = 255*coord.squeeze(0)
 
-        return output_fl, pred_cord_fl
+        return vox_list, pred_coord
 
 
     def resume_from_checkpoint(self):
@@ -100,6 +102,7 @@ class pvcNet(nn.Module):
 
 
     def save_to_checkpoint(self, predictions, checkpoint, snapshot=1):
+        self.epoch += 1
         is_best = self.current_acc > self.best_acc
         if is_best:
             print('new record:{}'.format(self.current_acc))
