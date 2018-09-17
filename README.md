@@ -21,7 +21,7 @@ This repository includes the PyTorch code for training and evaluating the networ
 
 Clone the repository and install the dependencies mentioned above
 ```
-git clone --recursive https://github.com/HongwenZhang/JVCR-3Dlandmark.git
+git clone https://github.com/HongwenZhang/JVCR-3Dlandmark.git
 cd JVCR-3Dlandmark
 ```
 Then, you can run the demo code or train a model from stratch.
