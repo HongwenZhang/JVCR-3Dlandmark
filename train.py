@@ -23,7 +23,7 @@ import utils
 from utils.imutils import show_voxel, show_joints3D
 from utils.misc import adjust_learning_rate
 from utils.evaluation import AverageMeter, bboxNormMeanError, p2pNormMeanError
-from utils.progress.progress.bar import Bar
+from progress.bar import Bar
 
 from datasets import fa68pt3D
 

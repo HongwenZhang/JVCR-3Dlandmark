@@ -15,6 +15,7 @@ This repository includes the PyTorch code for training and evaluating the networ
 - [PyTorch](https://www.pytorch.org)
 - [NumPy](http://www.numpy.org)
 - [Matplotlib](https://matplotlib.org)
+- [progress](https://anaconda.org/conda-forge/progress)
 
 ## Usage
 
