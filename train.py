@@ -11,6 +11,7 @@ from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 import time
 from PIL import Image
+from progress.bar import Bar
 
 import torch
 import torch.nn.parallel
@@ -23,7 +24,6 @@ import utils
 from utils.imutils import show_voxel, show_joints3D
 from utils.misc import adjust_learning_rate
 from utils.evaluation import AverageMeter, bboxNormMeanError, p2pNormMeanError
-from progress.bar import Bar
 
 from datasets import fa68pt3D
 
