@@ -1,6 +1,6 @@
-# Joint Voxel and Coordinate Regression for Accurate 3D Facial Landmark Localization
+# Joint Voxel and Coordinate Regression (JVCR) for 3D Facial Landmark Localization
 
-This repository includes the PyTorch code for training and evaluating the network described in [Joint Voxel and Coordinate Regression for Accurate 3D Facial Landmark Localization](https://arxiv.org/abs/1801.09242).
+This repository includes the PyTorch code of the JVCR method described in [Adversarial Learning Semantic Volume for 2D/3D Face Shape Regression in the Wild](https://openreview.net/pdf?id=gafjGfv8uR) (IEEE Transactions on Image Processing, 2019).
 
 <p align='center'>
 <img src='imgs/aflwDemo.gif' title='examples for 3D facial landmark localization' style='max-width:600px'></img>
@@ -53,3 +53,18 @@ python train.py --gpus 0 -j 4
 ## Acknowledgment
 
 The code is developed upon [PyTorch-Pose](https://github.com/bearpaw/pytorch-pose). Thanks to the original author.
+
+## Citation
+If the code is helpful in your research, please cite the following paper.
+```
+@article{zhang2019adversarial,
+  title={Adversarial Learning Semantic Volume for 2D/3D Face Shape Regression in the Wild},
+  author={Zhang, Hongwen and Li, Qi and Sun, Zhenan},
+  journal={IEEE Transactions on Image Processing},
+  volume={28},
+  number={9},
+  pages={4526--4540},
+  year={2019},
+  publisher={IEEE}
+}
+```
